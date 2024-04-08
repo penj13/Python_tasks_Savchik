@@ -1,3 +1,4 @@
+# возможно это задание по JS все-таки ??? :)
 class Node:
     def __init__(self, data):
         self.data = data 
