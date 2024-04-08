@@ -75,6 +75,7 @@ class MyList:
             print('-----------------------------------')
             print ('Нечего удалять, спсисок пуст!')
             print('-----------------------------------')
+            list.menu()
         else:
             self.i -= 1
             if(self.head != self.tail):
@@ -92,6 +93,7 @@ class MyList:
             print('-----------------------------------')
             print ('Нечего удалять, спсисок пуст!')
             print('-----------------------------------')
+            list.menu()
         else:
             self.i -= 1
             if(self.head != self.tail):   
