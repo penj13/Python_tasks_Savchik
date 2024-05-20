@@ -1,24 +1,31 @@
-s = ["watch new movies", "coffee near me", "how to find the determinant", "python", "data science jobs in UK", "courses for data science", "taxi", "google", "yandex", "bing", "foreign exchange rates USD/BYN", "Netflix movies watch online free",  "Statistics courses online from top universities"]
-def stat(s):
-    n = len(s)
-    n_1 = int(n)
-    f = []
-    i = 0
-    for z in range(n_1):
-        g = str(s[i])
-        b = g.split()
-        a = len(b)
-        f.append(a)
-        i += 1
-    max_w = max(f)
-    h = 1
-    for z in range(max_w):
-        pr = round(100*(f.count(h)/n_1), 2)
-        if h%10 == 1:
-            print(h,'слово:',pr,'%')
-        elif h%10 == 2 or h%10 == 3 or h%10 == 4:
-            print(h,'слова:',pr,'%')
-        elif h%10 == 0 or h%10 == 5 or h%10 == 6 or h%10 == 7 or h%10 == 8 or h%10 == 9 or h == 11:
-            print(h,'слов:',pr,'%')
-        h += 1
-stat(s)
+search_words = ["watch new movies", "coffee near me", "how to find the determinant", "python", "data science jobs in UK", "courses for data science", "taxi", "google", "yandex", "bing", "foreign exchange rates USD/BYN", "Netflix movies watch online free",  "Statistics courses online from top universities"]
+
+
+def percent_stats(count_words: str):
+    list_of_searches = []
+    dict_search_words = dict.fromkeys(count_words)
+    
+    for key, value in dict_search_words.items():
+        spaces_key = key.split()
+        value = len(spaces_key)
+        list_of_searches.append(value)
+
+    num_of_searches = len(list_of_searches)
+    max_words_in_one_search = max(list_of_searches)
+    
+    for word_count in range(max_words_in_one_search+1):
+        num_of_words = list_of_searches.count(word_count)
+        percent_of_searches = num_of_words / num_of_searches
+        if num_of_words > 0:
+            if word_count % 10 in (2, 3, 4):
+                i = "а"
+            elif word_count % 10 in (0, 5, 6, 7, 8, 9):
+                i = ""
+            elif word_count % 10 in (1,):
+                i = "о"
+            print(f"{word_count} слов{i}: {percent_of_searches:.2%}")
+
+
+percent_stats(search_words)
+
+
