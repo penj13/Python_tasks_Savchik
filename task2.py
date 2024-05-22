@@ -1,7 +1,7 @@
 from math import sqrt
 
-vector_a = [1, 320, -500]
-vector_b = [-100, 0, 0]
+vector_a = [1, 0, 0]
+vector_b = [1, 0, 0]
 num_of_values_a = len(vector_a)
 num_of_values_b = len(vector_b)
 
@@ -12,7 +12,7 @@ def cosine_similarity (a, b):
         general_dot = 0
         general_norm_a = 0
         general_norm_b = 0
-        for count in range(num_of_values_a):
+        for count_i in range(num_of_values_a):
             dot_i = a[i]*b[i]
             general_dot += dot_i
             norm_a_i = a[i]**2
